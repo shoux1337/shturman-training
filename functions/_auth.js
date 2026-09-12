@@ -10,7 +10,7 @@ async function tokenHash(token){return bytesToB64(new Uint8Array(await digest(to
 function cookieToken(request){const h=request.headers.get('Cookie')||'';const m=h.match(new RegExp('(?:^|;\\s*)'+COOKIE+'=([^;]+)'));return m?.[1]||null}
 function cookieHeader(token,maxAge){return `${COOKIE}=${token}; Max-Age=${maxAge}; Path=/; HttpOnly; Secure; SameSite=Lax`}
 async function createSession(env,userId){const token=await newToken(),th=await tokenHash(token),expires=Math.floor(Date.now()/1000)+60*60*24*30;await env.DB.prepare('INSERT INTO sessions(token_hash,user_id,expires_at) VALUES(?,?,?)').bind(th,userId,expires).run();return {token,expires}}
-async function getUser(request,env){const token=cookieToken(request);if(!token)return null;const th=await tokenHash(token);const row=await env.DB.prepare('SELECT u.id,u.username FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=? AND s.expires_at>?').bind(th,Math.floor(Date.now()/1000)).first();return row||null}
+async function getUser(request,env){const token=cookieToken(request);if(!token||!env.DB)return null;const th=await tokenHash(token);const row=await env.DB.prepare('SELECT u.id,u.username FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=? AND s.expires_at>?').bind(th,Math.floor(Date.now()/1000)).first();return row||null}
 function json(data,status=200,headers={}){return new Response(JSON.stringify(data),{status,headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store',...headers}})}
 function validUsername(u){return /^[\p{L}\p{N}_-]{3,24}$/u.test(u)}
 export {hashPassword,newSalt,createSession,getUser,cookieToken,tokenHash,cookieHeader,json,validUsername};
