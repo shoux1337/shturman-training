@@ -9,4 +9,4 @@ database_id = "9d1c0871-93a7-451f-b821-af1ff2d33b03"
 
 [vars]
 # Replace with your own account nickname to enable the admin panel
-ADMIN_USERNAME = "REPLACE_WITH_YOUR_NICK"
+ADMIN_USERNAME = "shoux"
