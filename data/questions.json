@@ -53,7 +53,7 @@
       "title": "Буи и навигационные знаки",
       "description": "Визуальное распознавание плавучих знаков, кромок, створов и опасностей",
       "icon": "◈",
-      "start": 3480,
+      "start": 3485,
       "end": 3509
     },
     {
@@ -2173,7 +2173,7 @@
       "images": [],
       "page_start": 15,
       "page_end": 15,
-      "block": "buoys",
+      "block": "safety",
       "multi": false,
       "eligible": true
     },
@@ -2196,7 +2196,7 @@
       "images": [],
       "page_start": 15,
       "page_end": 15,
-      "block": "buoys",
+      "block": "service",
       "multi": false,
       "eligible": true
     },
@@ -2217,7 +2217,7 @@
       "images": [],
       "page_start": 15,
       "page_end": 15,
-      "block": "buoys",
+      "block": "safety",
       "multi": false,
       "eligible": true
     },
@@ -2240,7 +2240,7 @@
       "images": [],
       "page_start": 15,
       "page_end": 15,
-      "block": "buoys",
+      "block": "service",
       "multi": false,
       "eligible": true
     },
@@ -2259,7 +2259,7 @@
       "images": [],
       "page_start": 15,
       "page_end": 15,
-      "block": "buoys",
+      "block": "safety",
       "multi": false,
       "eligible": true
     },
@@ -2275,11 +2275,11 @@
         "непосредственно над опасностью"
       ],
       "correct": [
+        true,
         false,
         false,
         false,
-        false,
-        true
+        false
       ],
       "images": [
         "assets/q3485_1.png"
@@ -2303,9 +2303,9 @@
       ],
       "correct": [
         false,
-        false,
-        false,
         true,
+        false,
+        false,
         false
       ],
       "images": [
@@ -2331,8 +2331,8 @@
       "correct": [
         false,
         false,
-        true,
         false,
+        true,
         false
       ],
       "images": [
@@ -2357,8 +2357,8 @@
       ],
       "correct": [
         false,
-        true,
         false,
+        true,
         false,
         false
       ],
@@ -2383,11 +2383,11 @@
         "непосредственно над опасности"
       ],
       "correct": [
-        true,
         false,
         false,
         false,
-        false
+        false,
+        true
       ],
       "images": [
         "assets/q3489_1.png"
@@ -2436,8 +2436,8 @@
       "correct": [
         false,
         false,
-        true,
-        false
+        false,
+        true
       ],
       "images": [
         "assets/q3491_1.png"
@@ -2485,8 +2485,8 @@
       ],
       "correct": [
         false,
-        true,
         false,
+        true,
         false
       ],
       "images": [
@@ -2704,8 +2704,8 @@
         false,
         false,
         false,
-        true,
-        false
+        false,
+        true
       ],
       "images": [
         "assets/q3501_1.png"
