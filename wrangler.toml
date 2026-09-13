@@ -8,5 +8,5 @@ database_name = "shturman"
 database_id = "9d1c0871-93a7-451f-b821-af1ff2d33b03"
 
 [vars]
-ADMIN_USERNAME = "ТВОЙ_НИК"
+ADMIN_USERNAME = "shoux"
 RESEND_FROM_EMAIL = "Shturman <no-reply@shturman.xyz>"
