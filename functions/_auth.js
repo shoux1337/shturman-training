@@ -13,4 +13,6 @@ async function createSession(env,userId){const token=await newToken(),th=await t
 async function getUser(request,env){const token=cookieToken(request);if(!token||!env.DB)return null;const th=await tokenHash(token);const row=await env.DB.prepare('SELECT u.id,u.username FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=? AND s.expires_at>?').bind(th,Math.floor(Date.now()/1000)).first();return row||null}
 function json(data,status=200,headers={}){return new Response(JSON.stringify(data),{status,headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store',...headers}})}
 function validUsername(u){return /^[\p{L}\p{N}_-]{3,24}$/u.test(u)}
-export {hashPassword,newSalt,createSession,getUser,cookieToken,tokenHash,cookieHeader,json,validUsername};
+function validEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(e||'').trim()) && String(e||'').trim().length<=254}
+async function randomToken(){return newToken()}
+export {hashPassword,newSalt,createSession,getUser,cookieToken,tokenHash,cookieHeader,json,validUsername,validEmail,randomToken};

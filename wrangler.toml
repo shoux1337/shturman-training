@@ -10,3 +10,6 @@ database_id = "9d1c0871-93a7-451f-b821-af1ff2d33b03"
 [vars]
 # Replace with your own account nickname to enable the admin panel
 ADMIN_USERNAME = "REPLACE_WITH_YOUR_NICK"
+APP_URL = "https://shturman-training.pages.dev"
+# Replace with a sender on a domain verified in Resend, e.g. Shturman <no-reply@mail.example.com>
+RESEND_FROM_EMAIL = "Shturman <no-reply@YOUR-VERIFIED-DOMAIN>"
